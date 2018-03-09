@@ -68,12 +68,16 @@
 		<finalName>${artifactId}-${version}</finalName>
 
 		<plugins>
+                	<plugin>
+                    		<groupId>org.eluder.coveralls</groupId>
+                    		<artifactId>coveralls-maven-plugin</artifactId>
+                    		<version>4.3.0</version>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>3.0.2</version>
 				<configuration>
-
 					<archive>
 						<index>true</index>
 						<manifest>
