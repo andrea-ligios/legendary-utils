@@ -1,14 +1,20 @@
 # Legendary Utils
 
+[![Build Status][travis-image]][travis-url] 
+
+[travis-image]: https://travis-ci.org/andrea-ligios/legendary-utils.svg?branch=master
+[travis-url]: https://travis-ci.org/andrea-ligios/legendary-utils
+
+
 Epic tools you won't find elsewhere.
 
 Requirements: Java8+ and SLF4J-API. No other dependencies by-design.
 
 Extensively Unit-Tested with JUnit 5.
 
-### [FilenameSanitizer](src/main/java/com/andrealigios/legendaryutils/FilenameSanitizer.java)
+## FilenameSanitizer
 
-FilenameSanitizer performs the sanitization of a filename in order to make it safe to be used for a file creation on every modern File System. 
+[FilenameSanitizer](src/main/java/com/andrealigios/legendaryutils/FilenameSanitizer.java) performs the sanitization of a filename in order to make it safe to be used for a file creation on every modern File System. 
 
 Unallowed chars are replaced with a safe token (an underscore) according to every modern File System naming convention.
 
