@@ -1,6 +1,6 @@
 # Legendary Utils
 
-[![Build Status][travis-image]][travis-url] 
+[![Build Status][travis-image]][travis-url] [![Coverage Status](https://coveralls.io/repos/github/andrea-ligios/legendary-utils/badge.svg?branch=master)](https://coveralls.io/github/andrea-ligios/legendary-utils?branch=master)
 
 [travis-image]: https://travis-ci.org/andrea-ligios/legendary-utils.svg?branch=master
 [travis-url]: https://travis-ci.org/andrea-ligios/legendary-utils
