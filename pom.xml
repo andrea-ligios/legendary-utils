@@ -68,7 +68,24 @@
 		<finalName>${project.artifactId}-${project.version}</finalName>
 
 		<plugins>
-                	<plugin>
+			<plugin>
+		      	<artifactId>maven-surefire-plugin</artifactId>
+		      	<!-- latest version (2.20.1) does not work well with JUnit5 -->
+		      		<version>2.19.1</version>
+		      		<dependencies>
+					<dependency>
+			  			<groupId>org.junit.platform</groupId>
+			  			<artifactId>junit-platform-surefire-provider</artifactId>
+			  			<version>${junit.platform.version}</version>
+					</dependency>
+					<dependency>
+				  		<groupId>org.junit.jupiter</groupId>
+				  		<artifactId>junit-jupiter-engine</artifactId>
+				  		<version>${junit.jupiter.version}</version>
+					</dependency>
+		      		</dependencies>
+		        </plugin>
+			<plugin>
                     		<groupId>org.eluder.coveralls</groupId>
                     		<artifactId>coveralls-maven-plugin</artifactId>
                     		<version>4.3.0</version>
