@@ -1,12 +1,10 @@
 # Legendary Utils
 
-[![Build Status][travis-image]][travis-url] [![Coverage Status](https://coveralls.io/repos/github/andrea-ligios/legendary-utils/badge.svg?branch=master)](https://coveralls.io/github/andrea-ligios/legendary-utils?branch=master)
+[![Build Status](https://travis-ci.org/andrea-ligios/legendary-utils.svg?branch=master)](https://travis-ci.org/andrea-ligios/legendary-utils)
+[![Coverage Status](https://coveralls.io/repos/github/andrea-ligios/legendary-utils/badge.svg?branch=master)](https://coveralls.io/github/andrea-ligios/legendary-utils?branch=master)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[travis-image]: https://travis-ci.org/andrea-ligios/legendary-utils.svg?branch=master
-[travis-url]: https://travis-ci.org/andrea-ligios/legendary-utils
-
-
-Epic tools you won't find elsewhere.
+> *Epic tools the world needed*
 
 Requirements: Java8+ and SLF4J-API. No other dependencies by-design.
 
