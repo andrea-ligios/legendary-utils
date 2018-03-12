@@ -18,18 +18,18 @@ class FilenameSanitizerTest {
     void givenProperMultilingualInput_whenSanitized_ThenOutputUnchanged() {
     	
         String FILENAME_ENGLISH = "This is an English document.txt";
-	   	String FILENAME_ITALIAN = "Questo è un documento Italiano.txt";
-	   	String FILENAME_RUSSIAN = "Это российский документ.txt";
-	   	String FILENAME_CHINESE = "这是一个中文文档.txt";
-	   	String FILENAME_HINDI   = "यह एक हिंदी दस्तावेज़ है.txt";
-	   	String FILENAME_ARAB    = "هذه وثيقة عربية.txt";
-    	
-	   	assertEquals(FilenameSanitizer.sanitize(FILENAME_ENGLISH), FILENAME_ENGLISH);
-	   	assertEquals(FilenameSanitizer.sanitize(FILENAME_ITALIAN), FILENAME_ITALIAN);
-	   	assertEquals(FilenameSanitizer.sanitize(FILENAME_RUSSIAN), FILENAME_RUSSIAN);
-	   	assertEquals(FilenameSanitizer.sanitize(FILENAME_CHINESE), FILENAME_CHINESE);
-	   	assertEquals(FilenameSanitizer.sanitize(FILENAME_HINDI),   FILENAME_HINDI);
-	   	assertEquals(FilenameSanitizer.sanitize(FILENAME_ARAB),    FILENAME_ARAB);
+	String FILENAME_ITALIAN = "Questo è un documento Italiano.txt";
+	String FILENAME_RUSSIAN = "Это российский документ.txt";
+	String FILENAME_CHINESE = "这是一个中文文档.txt";
+	String FILENAME_HINDI   = "यह एक हिंदी दस्तावेज़ है.txt";
+	String FILENAME_ARAB    = "هذه وثيقة عربية.txt";
+
+	assertEquals(FilenameSanitizer.sanitize(FILENAME_ENGLISH), FILENAME_ENGLISH);
+	assertEquals(FilenameSanitizer.sanitize(FILENAME_ITALIAN), FILENAME_ITALIAN);
+	assertEquals(FilenameSanitizer.sanitize(FILENAME_RUSSIAN), FILENAME_RUSSIAN);
+	assertEquals(FilenameSanitizer.sanitize(FILENAME_CHINESE), FILENAME_CHINESE);
+	assertEquals(FilenameSanitizer.sanitize(FILENAME_HINDI),   FILENAME_HINDI);
+	assertEquals(FilenameSanitizer.sanitize(FILENAME_ARAB),    FILENAME_ARAB);
     }
 
     // FILENAME WITH SURROGATE PAIR 
@@ -43,8 +43,8 @@ class FilenameSanitizerTest {
     @Test
     void givenControlCodes_whenSanitized_ThenReplacedWithUnderscore() {
     	for (int x=0;x<32;x++) {
-    		assertEquals(FilenameSanitizer.sanitize("A filename with control code n."+x+"["+(char)x+"]"), 
-    												"A filename with control code n."+x+"[_]");
+		assertEquals(FilenameSanitizer.sanitize("A filename with control code n."+x+"["+(char)x+"]"), 
+    							"A filename with control code n."+x+"[_]");
     	}
     }
 
@@ -52,44 +52,39 @@ class FilenameSanitizerTest {
     @Test
     void givenSpecialCharacters_whenSanitized_ThenReplacedWithUnderscore() {
         assertEquals(FilenameSanitizer.sanitize("A filename with a [<] less-than sign"), 
-    										    "A filename with a [_] less-than sign");
+    						"A filename with a [_] less-than sign");
     	
     	assertEquals(FilenameSanitizer.sanitize("A filename with a [>] more-than sign"), 
-    											"A filename with a [_] more-than sign");
+						"A filename with a [_] more-than sign");
     	
     	assertEquals(FilenameSanitizer.sanitize("A filename with a [:] colon"), 
-    											"A filename with a [_] colon");
+						"A filename with a [_] colon");
     	
     	assertEquals(FilenameSanitizer.sanitize("A filename with a [\"] quotation marks"), 
-    											"A filename with a [_] quotation marks");
+						"A filename with a [_] quotation marks");
     	
     	assertEquals(FilenameSanitizer.sanitize("A filename with a [/] slash"), 
-    											"A filename with a [_] slash");
+						"A filename with a [_] slash");
     	
     	assertEquals(FilenameSanitizer.sanitize("A filename with a [\\] backslash"), 
-    											"A filename with a [_] backslash");
+						"A filename with a [_] backslash");
     	
     	assertEquals(FilenameSanitizer.sanitize("A filename with a [|] vertical bar"), 
-												"A filename with a [_] vertical bar");
+						"A filename with a [_] vertical bar");
     	
     	assertEquals(FilenameSanitizer.sanitize("A filename with a [?] question mark"), 
-												"A filename with a [_] question mark");
+						"A filename with a [_] question mark");
     	
     	assertEquals(FilenameSanitizer.sanitize("A filename with a [*] asterisk"), 
-												"A filename with a [_] asterisk");
+						"A filename with a [_] asterisk");
     }
 
     // FILENAME WITH CONTROL CODES
     @Test
     void givenReservedNames_whenSanitized_ThenPrefixedWithUnderscore() {
-    	
-    	Stream.of(FilenameSanitizer.RESERVED_NAMES).forEach(reservedName -> {
-    		
-    		assertEquals(FilenameSanitizer.sanitize(reservedName), 
-    				                          "_" + reservedName);
-    		
-    		assertEquals(FilenameSanitizer.sanitize(reservedName + ".txt"), 
-    				                          "_" + reservedName + ".txt");
+    	Stream.of(FilenameSanitizer.RESERVED_NAMES).forEach(reservedName -> {    		
+    		assertEquals(FilenameSanitizer.sanitize(reservedName), "_" + reservedName);
+    		assertEquals(FilenameSanitizer.sanitize(reservedName + ".txt"), "_" + reservedName + ".txt");
     	});
     }
     
@@ -137,10 +132,10 @@ class FilenameSanitizerTest {
     // FILENAME WITH TRAILING DOTS / WHITESPACES
     @Test
     void givenTrailingDots_whenSanitizedPrettily_ThenStrippedOut() {    	
-    	String filenameEndingIndot 				= "A filename ending in dot.";    	
-    	String filenameEndingIndots1 			= "A filename ending in dot....";
-    	String filenameEndingIndots2 			= " - A filename ending in dot .. .. ";
-    	String expected 						= "A filename ending in dot";
+    	String filenameEndingIndot 	= "A filename ending in dot.";    	
+    	String filenameEndingIndots1 	= "A filename ending in dot....";
+    	String filenameEndingIndots2 	= " - A filename ending in dot .. .. ";
+    	String expected 		= "A filename ending in dot";
     	
     	assertEquals(FilenameSanitizer.sanitizePrettily(filenameEndingIndot), expected);
     	assertEquals(FilenameSanitizer.sanitizePrettily(filenameEndingIndots1), expected);
@@ -153,11 +148,11 @@ class FilenameSanitizerTest {
     // FILENAME WITH LEADING HYPHENS / WHITESPACES 
     @Test
     void givenLeadingHyphens_whenSanitizedPrettily_ThenStrippedOut() {    	
-    	String filenameStartingWithHyphen		= "-A filename starting with hypen";
+    	String filenameStartingWithHyphen	= "-A filename starting with hypen";
     	String filenameStartingWithHyphens1 	= "----A filename starting with hypen";
     	String filenameStartingWithHyphens2 	= " --. -- A filename starting with hypen . ";
     	String filenameStartingWithHyphens3 	= ".---- A filename starting with hypen.";
-    	String expected 						= "A filename starting with hypen";
+    	String expected 			= "A filename starting with hypen";
     	    	
     	assertEquals(FilenameSanitizer.sanitizePrettily(filenameStartingWithHyphen), expected);
     	assertEquals(FilenameSanitizer.sanitizePrettily(filenameStartingWithHyphens1), expected);
