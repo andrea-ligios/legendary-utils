@@ -42,7 +42,3 @@ The logging is performed with SLF4J, which will default to NOP (No OPeration) if
 Related: [Naming Files, Paths, and Namespaces](https://msdn.microsoft.com/en-us/library/windows/desktop/aa365247(v=vs.85).aspx)
 
 Related: [Fixing Unix/Linux/POSIX Filenames: Control Characters (such as Newline), Leading Dashes, and Other Problems](https://www.dwheeler.com/essays/fixing-unix-linux-filenames.html)
-
-## WordsCapitalizer
-
-[FilenameSanitizer](src/main/java/com/andrealigios/legendaryutils/FilenameSanitizer.java) performs the sanitization of a filename in order to make it safe to be used for a file creation on every modern File System.
