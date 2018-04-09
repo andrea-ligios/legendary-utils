@@ -3,6 +3,9 @@
 [![Build Status](https://travis-ci.org/andrea-ligios/legendary-utils.svg?branch=master)](https://travis-ci.org/andrea-ligios/legendary-utils)
 [![Coverage Status](https://coveralls.io/repos/github/andrea-ligios/legendary-utils/badge.svg?branch=master)](https://coveralls.io/github/andrea-ligios/legendary-utils?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![security status](https://meterian.io/badge/gh/andrea-ligios/legendary-utils/security)](https://meterian.io/report/gh/andrea-ligios/legendary-utils)
+[![stability status](https://meterian.io/badge/gh/andrea-ligios/legendary-utils/stability)](https://meterian.io/report/gh/andrea-ligios/legendary-utils)
+
 
 > *Epic tools the world needed*
 
