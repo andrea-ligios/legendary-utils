@@ -19,10 +19,10 @@ Extensively Unit-Tested with JUnit 5.
 
 Unallowed chars are replaced with a safe token (an underscore) according to every modern File System naming convention.
 
-[READ MORE](DOC_FilenameSanitizer.md).
+[READ MORE](docs/FilenameSanitizer.md).
 
 ## WordsCapitalizer
 
 [WordsCapitalizer](src/main/java/com/andrealigios/legendaryutils/WordsCapitalizer.java) performs the full capitalization of a String in the right way (lowering when needed, taking into account Locales and Surrogate Pairs) and also allowing the user to specify custom delimiters and get complex behaviours. Perfect when handling last names, street names, etc. 
 
-[READ MORE](DOC_WordsCapitalizer.md).
+[READ MORE](docs/WordsCapitalizer.md).
