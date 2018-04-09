@@ -101,7 +101,7 @@ class FilenameSanitizerTest {
                                                 "A filename with a [_] asterisk");
     }
 
-    // FILENAME WITH CONTROL CODES
+    // FILENAME WITH RESERVED NAMES
     @Test
     void givenReservedNames_whenSanitized_ThenPrefixedWithUnderscore() {
         Stream.of(FilenameSanitizer.RESERVED_NAMES).forEach(reservedName -> {           
