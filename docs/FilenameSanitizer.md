@@ -1,6 +1,6 @@
 ## FilenameSanitizer
 
-[FilenameSanitizer](src/main/java/com/andrealigios/legendaryutils/FilenameSanitizer.java) performs the sanitization of a filename in order to make it safe to be used for a file creation on every modern File System. 
+[FilenameSanitizer](../src/main/java/com/andrealigios/legendaryutils/FilenameSanitizer.java) performs the sanitization of a filename in order to make it safe to be used for a file creation on every modern File System. 
 
 Unallowed chars are replaced with a safe token (an underscore) according to every modern File System naming convention.
 
