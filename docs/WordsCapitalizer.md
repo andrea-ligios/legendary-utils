@@ -1,6 +1,6 @@
 ## WordsCapitalizer
 
-[WordsCapitalizer](src/main/java/com/andrealigios/legendaryutils/WordsCapitalizer.java) performs a smart words capitalization, respecting Unicode and UTF-16 Surrogate Pairs, and a custom Locale if provided.
+[WordsCapitalizer](../src/main/java/com/andrealigios/legendaryutils/WordsCapitalizer.java) performs a smart words capitalization, respecting Unicode and UTF-16 Surrogate Pairs, and a custom Locale if provided.
 <p> 
 Custom delimiters can be specified in order to instruct the engine how to handle each one of those, 
 by capitalizing only before, only after, or before and after the marker, to handle cases like O'Brian when parsing last names, for example.
