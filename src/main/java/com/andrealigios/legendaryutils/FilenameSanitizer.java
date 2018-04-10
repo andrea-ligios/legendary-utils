@@ -34,6 +34,7 @@ import org.slf4j.LoggerFactory;
  * 
  * @author Andrea Ligios
  * @version 1.0.0
+ * @see <a href="https://github.com/andrea-ligios/legendary-utils">Legendary Utils</a>
  * 
  * FilenameSanitizer performs the sanitization of a filename in order to make it safe to be used for a file creation on every modern File System. 
  * <p>
