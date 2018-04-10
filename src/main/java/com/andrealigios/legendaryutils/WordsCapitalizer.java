@@ -32,6 +32,7 @@ import java.util.Locale;
  * 
  * @author Andrea Ligios
  * @version 1.0.0
+ * @see <a href="https://github.com/andrea-ligios/legendary-utils">Legendary Utils</a>
  * 
  * WordsCapitalizer performs a smart words capitalization, respecting Unicode and UTF-16 Surrogate Pairs, and a custom Locale if provided.
  * <p> 
@@ -39,7 +40,8 @@ import java.util.Locale;
  * by capitalizing only before, only after, or before and after the marker, to handle cases like O'Brian when parsing last names, for example.
  * 
  * Originally posted on November 30, 2012, on StackOverflow: https://stackoverflow.com/a/13649579/1654265
- * */
+ * 
+ */
 public class WordsCapitalizer {
 
     public static String capitalizeEveryWord(String source) {
